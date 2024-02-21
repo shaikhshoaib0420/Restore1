@@ -1,0 +1,62 @@
+
+
+
+
+FEB-MARCH
+
+15, 16, 17, 18, 19 => sections 1, 2, 3, 4, 5 till Error Handling 8 hours
+
+20, 21, 22, 23, 24 => sections 6, 7, 6 hours
+
+25, 26 => section 8	, 3 hours
+
+27, 28, 29, 01, 02, 03, 04, 05, 06	=> 9, 10, 11, 9 hours
+
+07, 08, 09, 10	=> 12, 13 6 hours
+
+
+
+
+
+API: 
+	Commands:
+		
+		Creating new solution:
+			dotnet new sln
+		
+		Creating webapi:
+			dotnet new webapi -o API
+		
+		Adding webapi in solution:
+			dotnet sln add API
+			
+		To run the webapi:
+			dotnet run
+			
+		To create gitignore:
+			dotnet new gitignore
+		
+		Packages:	
+			Microsoft.EntityFrameworkCore.SQLite	
+			Microsoft.EntityFrameworkCore.Design
+			SQLitePCLRaw.bundle_e_sqlite3
+		
+		
+		.NET Core Tools for CMD:
+			dotnet tool install --global dotnet-ef --version 8.0.1
+		
+		.NET to Add Migration:
+			dotnet ef migrations add "Migration name"
+			
+		.NET to Update db:
+			dotnet ef database update
+			
+		.NET to Drop db:
+			dotnet ef database drop
+		
+	Extensions:
+		C#
+		NuGet Gallery
+		SQLite
+		
+		
