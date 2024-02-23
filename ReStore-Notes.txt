@@ -35,11 +35,14 @@ API:
 			
 		To create gitignore:
 			dotnet new gitignore
+			
+		Adding current branch to remote Repo:
+			git remote add origin https:github.com/shaikhshoaib0420/Restore1.git
 		
-		Packages:	
-			Microsoft.EntityFrameworkCore.SQLite	
-			Microsoft.EntityFrameworkCore.Design
-			SQLitePCLRaw.bundle_e_sqlite3
+	Packages:	
+		Microsoft.EntityFrameworkCore.SQLite	
+		Microsoft.EntityFrameworkCore.Design
+		SQLitePCLRaw.bundle_e_sqlite3
 		
 		
 		.NET Core Tools for CMD:
@@ -60,3 +63,41 @@ API:
 		SQLite
 		
 		
+		
+		
+REACT:
+	Commands:
+		npm create vite@latest
+		
+		OR
+		
+		npm install -g create-react-app
+		
+		npx create-react-app my-react-app --template typescript
+		
+		
+		
+		adding material UI:
+			npm install @mui/material @emotion/react @emotion/styled
+			
+			npm install @fontsource/roboto
+			
+			npm install @mui/icons-material
+			
+			
+			
+		NOTES:
+			Destructuring properties:
+				ParentElement() {
+					<ChildElement products={products} addFunction={addFunction} /
+				}
+				
+				
+				interface Props {
+					products: Product[];
+					addFunction: () => void;
+				}
+				ChildElement({products, addFunction}: Props) {
+					
+				}
+				

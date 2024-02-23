@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<StoreContext>((c) => {
     c.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
+builder.Services.AddCors();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,7 +20,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(cors => {
+    cors.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+});
 // app.UseHttpsRedirection();
 
 var summaries = new[]
