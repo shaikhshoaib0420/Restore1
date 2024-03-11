@@ -17,7 +17,6 @@ FEB-MARCH
 
 
 
-
 API: 
 	Commands:
 		
@@ -85,6 +84,12 @@ REACT:
 			npm install @mui/icons-material
 			
 			
+		REACT ROUTER:
+			npm install react-router-dom
+			
+		ADDING Axios:
+			npm install axios
+			
 			
 		NOTES:
 			Destructuring properties:
@@ -101,3 +106,15 @@ REACT:
 					
 				}
 				
+				
+				
+			REACT ROUTER:	
+				
+				<ListItem 
+				  component={NavLink} 
+				  to={m.path}
+				  sx={{color: 'inherit', typography: 'h6'}}
+				  >{m.name}</ListItem>
+				  
+				  NavLink is a component of react-router-dom,
+					to will be use to navigate to path

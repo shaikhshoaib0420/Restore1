@@ -6,11 +6,16 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ShareIcon from '@mui/icons-material/Share';
 import { red } from '@mui/material/colors';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
     product: Product
 }
 const ProductCard = (props: Props) => {
+  const navigate = useNavigate();
+    function navigateToProductDetails(id: number) {
+      navigate('/catalog/'+ id)
+    }
     return (
     // <ListItem key={props.product.id}>
     //     <ListItemAvatar>
@@ -50,7 +55,7 @@ const ProductCard = (props: Props) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" onClick={() => navigateToProductDetails(props.product.id)}>
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">
