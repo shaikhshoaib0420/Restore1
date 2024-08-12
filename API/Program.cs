@@ -14,6 +14,8 @@ builder.Services.AddDbContext<StoreContext>((c) => {
 builder.Services.AddCors();
 var app = builder.Build();
 
+app.UseMiddleware<ExceptionMiddleware>();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

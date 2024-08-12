@@ -8,6 +8,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MailIcon from '@mui/icons-material/Menu';
 import { NavLink, Outlet } from 'react-router-dom';
 import { ShoppingCart } from '@mui/icons-material';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -40,6 +42,7 @@ function App() {
 };
   return (
     <ThemeProvider theme={theme}>
+      <ToastContainer position='bottom-left' hideProgressBar theme='colored'></ToastContainer>
      <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{mb: 4}}>
         <Toolbar>

@@ -2,15 +2,26 @@ import { Avatar, List, ListItem, ListItemAvatar, ListItemText } from "@mui/mater
 import { Product } from "../../model/Product";
 import ProductList from "./ProductList";
 import { useEffect, useState } from "react";
+import agent from "../../api/agent";
+import LoadingComponent from "../../layout/LoadingComponent";
 
 export default function Catalog() {
     const [products, setProducts] = useState<Product[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
   
+    // useEffect(() => {
+    //   fetch("http://localhost:5202/api/product")
+    //     .then(res => res.json())
+    //     .then(res => setProducts(res))
+    // }, []);
+
     useEffect(() => {
-      fetch("http://localhost:5202/api/product")
-        .then(res => res.json())
-        .then(res => setProducts(res))
-    }, []);
+        setLoading(true);
+        agent.catalog.getProducts().then(setProducts)
+        .finally(() => setLoading(false));
+    }, [])
+
+    if (loading) return <LoadingComponent message="Loading Products..."/>
     //destructuring property
     return (
         <>

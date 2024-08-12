@@ -3,22 +3,35 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Product } from "../../model/Product";
+import agent from "../../api/agent";
+import { error } from "console";
 
 const ProductDetails = () => {
 
     const {id} = useParams();
     const [product, setProduct] = useState<Product>();
     const [loading, setLoading] = useState(true);
+    const [noProduct, setNoProduct] = useState<"">();
+    // useEffect(() => {
+    //     axios.get(`http://localhost:5202/api/product/${id}`)
+    //         .then(response => setProduct(response.data))
+    //         .catch(error => console.log(error))
+    //         .finally(() => setLoading(false));
+    // },[id]);
+
     useEffect(() => {
-        axios.get(`http://localhost:5202/api/product/${id}`)
-            .then(response => setProduct(response.data))
-            .catch(error => console.log(error))
-            .finally(() => setLoading(false));
-    },[id]);
+       id && agent.catalog.getProduct(parseInt(id))
+       .then(setProduct)
+       .catch(err => {
+                console.log(err.response);
+                setNoProduct(err.response.data)
+            })
+       .finally(() => setLoading(false))
+    }, [id])
 
     if(loading) return <Typography variant="h3">Loading...</Typography>
 
-    if(!product) return <Typography variant="h3">Product not found</Typography>
+    if(!product) return <Typography variant="h3">{noProduct}</Typography>
     return (
         <Grid container spacing={6}>
             <Grid item xs={6}>

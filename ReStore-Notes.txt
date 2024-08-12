@@ -90,6 +90,9 @@ REACT:
 		ADDING Axios:
 			npm install axios
 			
+		ADDING TOASTIFY:
+			npm install react-toastify
+			
 			
 		NOTES:
 			Destructuring properties:
