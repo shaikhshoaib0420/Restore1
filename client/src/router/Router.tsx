@@ -5,22 +5,26 @@ import ContactPage from "../feature/contact/ContactPage";
 import AboutPage from "../feature/about/AboutPage";
 import Catalog from "../feature/catalog/Catalog";
 import ProductDetails from "../feature/catalog/ProductDetails";
-import  ServerError  from "../errors/ServerError";
+import ServerError from "../errors/ServerError";
 import NotFound from "../errors/NotFound";
+import BasketPage from "../feature/basket/BasketPage";
+import CheckoutPage from "../feature/checkout/CheckoutPage";
 
-
-export const router = createBrowserRouter([{
-
-        path: '/',
-        element: <App/>,
-        children: [
-            {path: '', element: <HomePage />},
-            {path: 'catalog', element: <Catalog />},
-            {path: 'catalog/:id', element: <ProductDetails />},
-            {path: 'about', element: <AboutPage />},
-            {path: 'contact', element: <ContactPage />},
-            {path: 'server-error', element: <ServerError />},
-            {path: 'not-found', element:<NotFound />},
-            {path: '*', element:<Navigate replace to='not-found'/>}
-        ]
-}]);
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "", element: <HomePage /> },
+      { path: "catalog", element: <Catalog /> },
+      { path: "catalog/:id", element: <ProductDetails /> },
+      { path: "about", element: <AboutPage /> },
+      { path: "contact", element: <ContactPage /> },
+      { path: "server-error", element: <ServerError /> },
+      { path: "not-found", element: <NotFound /> },
+      { path: "*", element: <Navigate replace to="not-found" /> },
+      { path: "basket", element: <BasketPage /> },
+      { path: "/checkout", element: <CheckoutPage /> },
+    ],
+  },
+]);

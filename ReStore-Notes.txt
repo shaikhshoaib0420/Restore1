@@ -93,6 +93,16 @@ REACT:
 		ADDING TOASTIFY:
 			npm install react-toastify
 			
+		
+		REDUX:
+			npm install react-redux
+			
+		REDUX TOOLKIT:
+			npm install @reduxjs/toolkit
+			
+			
+		
+			
 			
 		NOTES:
 			Destructuring properties:
@@ -119,5 +129,27 @@ REACT:
 				  sx={{color: 'inherit', typography: 'h6'}}
 				  >{m.name}</ListItem>
 				  
-				  NavLink is a component of react-router-dom,
+				  NavLink is a component of react-router-dom,x
 					to will be use to navigate to path
+					
+					
+					
+			INSTALLING LAB FOR LOADING BUTTON:
+				npm install @mui/lab @mui/material
+				
+				from udemy:
+					npm install @material-ui/lab@next
+					
+					
+				
+				rough:
+					ai_user: 
+					
+						8b135500-444f-4799-863b-9c4c35bf15cc
+						
+						
+				
+					
+					
+					
+			
